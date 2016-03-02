@@ -29,6 +29,16 @@ Couchbase Installation
 http://developer.couchbase.com/documentation/server/4.1/getting-started/gs-download-linux.html
 ```
 
+View
+----
+
+```sh
+function (doc, meta) {
+if (doc.type == "Trainer" && doc.isValid) {
+emit(meta.id, doc);
+}
+}
+```
 
 
 
