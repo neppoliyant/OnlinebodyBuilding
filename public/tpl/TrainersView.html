@@ -1,0 +1,31 @@
+<div class="row-fluid" id="trainerCollection">
+
+	<div class="span12"><legend><h4>Online Trainers</h4>
+    <div class="input-group pull-right">
+      <input type="text" class="form-control" id="searchTask" placeholder="Search for..."></input>
+      <span class="input-group-btn">
+        <button class="btn btn-default searchTrainer" type="button">Go!</button>
+      </span>
+    </div></legend>
+	</div>
+	<% _.each(clients, function(trainer){ %>
+        <div class="span5">
+		<div class="panel panel-default">
+		<div class="panel-heading"><%= trainer.name %></div>
+		<div class="panel-body">
+			<div class="col-sm-6 col-md-4">
+		    <div class="thumbnail">
+		      <img src="<%= trainer.picture %>" style="width:200px;height:228px;">
+		      <div class="caption">
+		        <h3><%= trainer.name %></h3> <div class="pull-right">
+				<button class="btn btn-default Subscribe" value="<%= trainer.id %>" type="submit">Subscribe</button></div>
+		        <p>Rating: <%= trainer.ratings %></p>
+		        <p>Site: <%= trainer.siteUrl %></p>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		</div>
+	</div>
+    <% }); %>
+</div>
